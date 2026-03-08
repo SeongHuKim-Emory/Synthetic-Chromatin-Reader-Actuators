@@ -1,18 +1,18 @@
-README
+## README.md
 
-Repository title:
+### Repository title
 Synthetic-Chromatin-Reader-Actuators
 
-Associated manuscript:
+### Associated manuscript
 Decoding Gene Responsiveness to Synthetic Chromatin Reader-Actuators with Multi-Modal Epigenomic Profiling
 
-Journal:
+### Journal
 NPJ Systems Biology and Applications
 
-Manuscript status:
+### Manuscript status
 Submitted
 
-Authors:
+### Authors
 Seong Hu Kim
 Isioma Enwerem-Lackland
 Natecia L. Williams
@@ -20,20 +20,20 @@ Rachel Fisher
 Christopher Plaisier
 Karmella A. Haynes
 
-Corresponding contact:
+### Corresponding contact
 Karmella A. Haynes
 kahayne@emory.edu
 
-Keywords:
+### Keywords
 epigenome engineering, polycomb, chromatin, gene regulation, topologically associating domains, machine learning, breast cancer
 
-Repository URL:
+### Repository URL
 github.com/SeongHuKim-Emory/Synthetic-Chromatin-Reader-Actuators
 
-Last updated:
+### Last updated
 March 8th, 2026
 
-1. Overview
+### 1. Overview
 
 This repository contains code used for machine learning, classification, and downstream analyses associated with the manuscript "Decoding Gene Responsiveness to Synthetic Chromatin Reader-Actuators with Multi-Modal Epigenomic Profiling."
 
@@ -42,10 +42,10 @@ The repository includes scripts required to reproduce the computational analyses
 The study combines ChIP-seq, time-course RNA-seq, public bioinformatics datasets, and machine learning analyses to investigate how chromatin context shapes responsiveness to synthetic reader-actuators in transgenic MCF7 breast cancer cells.
 
 
-2. Repository contents
+### 2. Repository contents
 
 Directory layout is shown below.
-
+```text
 ├───public
 │   ├───ChIPseq
 │   │       SHK_2024_06_11_MCF7_DBN021_0_0_ug_mL_Rep1.broadPeak
@@ -72,17 +72,7 @@ Directory layout is shown below.
 │   │   ├───Step18_ML_Prediction_H1
 │   │   ├───Step18_ML_Prediction_K562
 │   │   ├───Step18_ML_Prediction_SRA
-│   │   ├───Step19_15_ML_UpDEG_Prediction_Final_Training_Multi_Models
-│   │   ├───Step19_15_ML_UpDEG_Prediction_SRA_Final_Training_Multi_Models
-│   │   ├───Step19_16_ML_UpDEG_Prediction_Final_Training_Multi_Models_Interpret
-│   │   │   └───shap_waterfall_plots
-│   │   ├───Step19_16_ML_UpDEG_Prediction_SRA_Final_Training_Multi_Models_Interpret
-│   │   │   └───shap_waterfall_plots
-│   │   ├───Step19_ML_UpDEG_Prediction
-│   │   │   └───optuna_trial_models
-│   │   ├───Step19_ML_UpDEG_Prediction_Final_Model
 │   │   ├───Step19_ML_UpDEG_Prediction_SRA
-│   │   ├───Step19_ML_UpDEG_Prediction_SRA_Final_Model
 │   │   └───Step26_TAD_Insulation_Score
 │   │
 │   ├───Public Dataset
@@ -390,11 +380,6 @@ Directory layout is shown below.
 │   │   │       GeneHancer_Tissues_v5.25.txt
 │   │   │       GeneHancer_v5.25.gff
 │   │   │
-│   │   ├───GO
-│   │   │       goa_human header trimmed.csv
-│   │   │       goa_human header trimmed.gaf
-│   │   │       goa_human.gaf
-│   │   │
 │   │   ├───HiC
 │   │   │   │   MCF7 HiC Contact Domains GSE237722 ENCFF164AGX hg38 Original.bedpe
 │   │   │   │   MCF7 HiC Contact Domains GSE237722 ENCFF164AGX hg38.bedpe
@@ -431,12 +416,6 @@ Directory layout is shown below.
 │   │   │           MCF7_hg38_TADs.csv
 │   │   │           MCF7_hg38_TAD_Boundaries.bed
 │   │   │
-│   │   ├───Protein_Array
-│   │   │       harmonized_MS_CCLE_Gygi.csv
-│   │   │       harmonized_MS_CCLE_Gygi_MCF7.csv
-│   │   │       harmonized_MS_CCLE_Gygi_MCF7_Processed.csv
-│   │   │       uniprot_hugo_entrez_id_mapping.csv
-│   │   │
 │   │   └───RNAseq
 │   │           GSE175204 ENCFF721BRA hg38 MCF7 total RNAseq.tsv
 │   │            
@@ -445,14 +424,10 @@ Directory layout is shown below.
 │
 └───src
     │   hg19ToHg38.over.chain
-    │   Step10_Gene_Ontology.R
     │   Step11_ChIPseq_Heatmaps.R
     │   Step12_Visualize_Genomic_Annotation.R
-    │   Step13_ChIPseq_TSS_Plot.R
     │   Step14_RNAseq_Plots.R
-    │   Step15_Enhancer.R
     │   Step16_Linux_ChIPseq_Overlap.R
-    │   Step17_UpDEG_Prediction.R
     │   Step1_GeneCountMatrix_AddGeneSymbol.R
     │   Step26_1_TAD_Insulation_Score.R
     │   Step26_2_TAD_Insulation_Score_Summary.R
@@ -462,9 +437,6 @@ Directory layout is shown below.
     │   Step4_Public_HiC_Preprocessing.R
     │   Step5_ChIPseq_Preprocessing.R
     │   Step6_Multiomics.py
-    │   Step7_Multiomics_Cytoband.R
-    │   Step8_Multiomics_Overlaps.R
-    │   Step9_Multiomics_Bar_Graphs.R
     │
     ├───Step18_ML_Prediction
     │       hg38.chrom.sizes
@@ -505,26 +477,6 @@ Directory layout is shown below.
     │       Step18_4_1_ML_Prediction_Model_Training_H3K27me3_Only.py
     │       Step18_5_ML_Prediction_Test_Result_bed.py
     │       Step18_6_Custome_SHAP_Beeswarm.py
-    │
-    ├───Step19_ML_UpDEG_Prediction
-    │       Step19_10_0_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Transcript_GO.py
-    │       Step19_10_1_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Transcript_GO_CCLE.py
-    │       Step19_11_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Histone_Sets.py
-    │       Step19_12_ML_UpDEG_Prediction_Feature_Filtering.py
-    │       Step19_12_ML_UpDEG_Prediction_Feature_Filtering_Grid_Search.py
-    │       Step19_13_ML_UpDEG_Prediction_Final_Training.py
-    │       Step19_14_ML_UpDEG_Prediction_Final_Training_without_025.py
-    │       Step19_15_ML_UpDEG_Prediction_Final_Training_Multi_Models.py
-    │       Step19_16_ML_UpDEG_Prediction_Final_Training_Multi_Models_Interpret.py
-    │       Step19_1_ML_UpDEG_Prediction_Merge_Enhancer_RNAseq.py
-    │       Step19_2_ML_UpDEG_Prediction_Enhancer_DEG_Category.py
-    │       Step19_3_ML_UpDEG_Prediction_Feature_Matrix_TSS.py
-    │       Step19_4_ML_UpDEG_Prediction_Feature_Matrix_TSS_CleanUp.py
-    │       Step19_5_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA.py
-    │       Step19_6_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling.py
-    │       Step19_7_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Promoter.py
-    │       Step19_8_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Histone.py
-    │       Step19_9_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Transcript.py
     │   
     └───Step19_ML_UpDEG_Prediction_SRA
             Step19_10_0_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Transcript_GO.py
@@ -540,7 +492,7 @@ Directory layout is shown below.
             Step19_7_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Promoter.py
             Step19_8_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Histone.py
             Step19_9_ML_UpDEG_Prediction_Feature_Matrix_TSS_SRA_Max_Pooling_Transcript.py
-
+```
 
 Directory description:
 
@@ -552,7 +504,7 @@ Directory description:
 - src/: all source code files
 
 
-3. What this repository reproduces
+### 3. What this repository reproduces
 
 This repository is intended to reproduce the computational analyses and associated figures presented in the manuscript.
 
@@ -569,7 +521,7 @@ Supplementary items mentioned in the manuscript:
 - Supplemental Figure S4
 
 
-4. Software environment
+### 4. Software environment
 
 Analyses reported in the manuscript used the following software and package versions where stated.
 
@@ -601,7 +553,7 @@ R version:
 R 4.4.0
 
 
-5. Data availability
+### 5. Data availability
 
 Gene-level raw count matrices and differential expression results generated in this study are being deposited in the NCBI Gene Expression Omnibus and will be publicly available upon publication; accession is pending.
 
@@ -618,7 +570,6 @@ Publicly available datasets analyzed in the study are listed in the Methods and 
 - ENCODE MCF7 total RNA-seq dataset ENCFF721BRA
 - MCF7 Hi-C data GSE66733
 - GeneHancer v5.25 enhancer-gene interaction database
-- PANTHER v19.0 and GO v2025-07-22 annotations
 
 
 Access notes:
@@ -627,7 +578,7 @@ Access notes:
 - RNA-seq raw sequencing files: unavailable
 
 
-6. Installation.
+### 6. Installation.
 
 Document the actual repository setup here, for example:
 1. Clone the repository.
@@ -636,7 +587,7 @@ Document the actual repository setup here, for example:
 4. Run the analysis scripts in the order listed below.
 
 
-7. Execution order
+### 7. Execution order
 
 All the source code filenames include step numberings. 
 Follow the step numbers. 
@@ -644,7 +595,7 @@ Follow the step numbers.
 Missing steps, e.g. step 7, was not used in the final manuscript
 
 
-8. Figure reproduction map
+### 8. Figure reproduction map
 
 Figure 2: Genomic distributions and chromatin feature overlaps for SRA and PCD-RFP ChIP-seq peaks.
 
@@ -816,7 +767,7 @@ Figure S4B
 - Step18_ML_Prediction_K562/Step18_4_0_ML_Prediction_Model_Training.py
 - Use .jpg outputs for K562
 
-9. Hardware specification
+### 9. Hardware specification
 
 Windows PC (mainly used for R)
 - CPU: Intel(R) Core(TM) i5-10505 CPU @ 3.20GHz (3.20 GHz)
@@ -829,7 +780,7 @@ Linux PC (mainly used for Python)
 - GPU: NVIDIA Corporation TU102 [GeForce RTX 2080 Ti]
 
 
-10. Known limitations
+### 10. Known limitations
 
 RNA-seq raw sequencing files are unavailable.
 
