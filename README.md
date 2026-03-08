@@ -14,10 +14,15 @@ Submitted
 
 ### Authors
 Seong Hu Kim
+
 Isioma Enwerem-Lackland
+
 Natecia L. Williams
+
 Rachel Fisher
+
 Christopher Plaisier
+
 Karmella A. Haynes
 
 ### Corresponding contact
